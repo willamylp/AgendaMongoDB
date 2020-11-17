@@ -1,0 +1,4 @@
+django
+djongo
+dnspython
+django-widget-tweaks

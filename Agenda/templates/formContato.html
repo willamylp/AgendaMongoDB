@@ -1,0 +1,85 @@
+{% load static %}
+{% load widget_tweaks %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    {% include "./head.html" %}
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+<body class="theme-teal">
+
+    {% include "./pageLoader.html" %}
+    <div class="overlay"></div>
+    {% include "./topBar.html" %}
+    
+    <section class="content">
+        <div class="body">
+            <div class="container-fluid">
+                <div class="row clearfix">
+                    <div class="col-xs-12 col-sm-12 ">
+                        <div class="card">
+                            <form id="form_validation" method="POST">
+                                {% csrf_token %}
+                                <div class="body">
+                                    <div class="row clearfix">
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <b><span class="marcadorRequired">*</span> NOME COMPLETO</b>
+                                                <div class="form-line">
+                                                    {{ form.nome|add_class:'form-control' }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% comment %} === {% endcomment %}
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <b><span class="marcadorRequired">*</span> E-MAIL</b>
+                                                <div class="form-line">
+                                                    {{ form.email|add_class:'form-control' }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% comment %} === {% endcomment %}
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <b><span class="marcadorRequired">*</span> TELEFONE</b>
+                                                <div class="form-line">
+                                                    {{ form.telefone|add_class:'form-control' }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% comment %}  {% endcomment %}
+                                    </div>
+                                    <div class="row clearfix" align="left">
+                                        <div class="col-md-3">
+                                            <button type="submit" class="btn bg-teal btn-block waves-effect">
+                                                <h4>
+                                                    <span>REGISTRAR</span>
+                                                    <i class="material-icons">done_all</i>
+                                                </h4> 
+                                            </button>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <a href="../ListarContatos">
+                                            <button type="button" class="btn bg-blue btn-block waves-effect">
+                                                <h4>
+                                                    <span>LISTAR CONTATOS</span>
+                                                    <i class="material-icons">playlist_add_check</i>
+                                                </h4> 
+                                            </button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    {% comment %}  {% endcomment %}
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+   
+    {% include "./scripts.html" %}
+</body>
