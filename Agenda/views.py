@@ -6,6 +6,7 @@ from .forms import AgendaForm
 from Agenda import urls
 from bson import ObjectId
 
+
 def RegistrarContato(request):
     form = AgendaForm(request.POST or None)
     if(form.is_valid()):
@@ -13,6 +14,7 @@ def RegistrarContato(request):
         messages.success(request, 'Contato Registrado com Sucesso!')
         return redirect('/ListarContatos')
     return render(request, './formContato.html', {'form': form})
+
 
 def ListarContatos(request):
     contatos = Contatos.objects.all().values()
@@ -28,6 +30,7 @@ def AtualizarContato(request, id):
         form.save()
         return redirect('/ListarContatos')
     return render(request, './formContato.html', {'form': form})
+
 
 def DeletarContato(request, id):
     #contatoDelete = Contatos.objects.get(_id=ObjectId(id))

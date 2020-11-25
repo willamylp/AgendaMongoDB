@@ -36,7 +36,7 @@
                                             <div class="form-group">
                                                 <b><span class="marcadorRequired">*</span> E-MAIL</b>
                                                 <div class="form-line">
-                                                    {{ form.email|add_class:'form-control' }}
+                                                    {{ form.email|add_class:'form-control'|attr:"placeholder:exemplo@mail.com" }}
                                                 </div>
                                             </div>
                                         </div>
@@ -45,7 +45,7 @@
                                             <div class="form-group">
                                                 <b><span class="marcadorRequired">*</span> TELEFONE</b>
                                                 <div class="form-line">
-                                                    {{ form.telefone|add_class:'form-control' }}
+                                                    {{ form.telefone|add_class:'form-control'|attr:"placeholder:(DDD)9 8765-4321" }}
                                                 </div>
                                             </div>
                                         </div>
@@ -80,6 +80,6 @@
             </div>
         </div>
     </section>
-   
+
     {% include "./scripts.html" %}
 </body>

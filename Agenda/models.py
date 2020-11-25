@@ -16,7 +16,6 @@ class Contatos(models.Model):
         max_length=25,
         blank=False
     )
-    #objects = models.DjongoManager()
-    
+
     def __str__(self):
         return self.nome
