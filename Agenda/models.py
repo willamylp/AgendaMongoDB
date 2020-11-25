@@ -4,13 +4,12 @@ from djongo import models
 # Create your models here.
 class Contatos(models.Model):
     _id = models.ObjectIdField()
-
     nome = models.CharField(
         max_length=100,
         blank=False
     )
-    email = models.CharField(
-        max_length=100,
+    email = models.EmailField(
+        max_length=254,
         blank=False
     )
     telefone = models.CharField(

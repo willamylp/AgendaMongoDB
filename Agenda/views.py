@@ -20,16 +20,17 @@ def ListarContatos(request):
 
 
 def AtualizarContato(request, id):
+    #contato = get_object_or_404(Contatos, pk=id)
     contato = get_object_or_404(Contatos, _id=ObjectId(id))
     form = AgendaForm(request.POST, instance=contato)
-    print('>>>>', form)
+
     if(form.is_valid()):
         form.save()
         return redirect('/ListarContatos')
     return render(request, './formContato.html', {'form': form})
 
 def DeletarContato(request, id):
-    contatoDelete = get_object_or_404(Contatos, _id=ObjectId(id))
     #contatoDelete = Contatos.objects.get(_id=ObjectId(id))
+    contatoDelete = get_object_or_404(Contatos, _id=ObjectId(id))
     contatoDelete.delete()
     return redirect('/ListarContatos')
