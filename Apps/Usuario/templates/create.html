@@ -1,0 +1,37 @@
+{% extends 'baselog.html' %}
+{% comment %} 'username','first_name','last_name','email', 'password1', 'password2' {% endcomment %}
+{%  block formLogin %}
+    <span class="padding-bottom--15">Criar sua conta</span>
+    <form id="stripe-login"  action="." method="POST">
+        {% csrf_token %}
+        <div class="field padding-bottom--15">
+            <label for="username">Username</label>
+            {{ form.username }}
+        </div>
+        <div class="field padding-bottom--15">
+            <label for="username">First name</label>
+            {{ form.first_name }}
+        </div>
+        <div class="field padding-bottom--15">
+            <label for="username">Last name</label>
+            {{ form.last_name }}
+        </div>
+        <div class="field padding-bottom--15">
+            <label for="username">Email address</label>
+            {{ form.email }}
+        </div>
+        <div class="field padding-bottom--15">
+            <label for="username">Password</label>
+            {{ form.password1 }}
+        </div>
+        <div class="field padding-bottom--15">
+            <label for="username">Password confirmation</label>
+            {{ form.password2 }}
+        </div>
+        <div class="field padding-bottom--15">
+            <input type="submit" value="salvar"/>
+        </div>
+        </br>
+        <a href="{% url 'loginUser_home' %}">Voltar</a>
+    </form>
+{% endblock %}

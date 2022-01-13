@@ -1,0 +1,30 @@
+{% load static %}
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="{% static 'css/initpageslogin.css' %}" rel="stylesheet">
+    <link href="{% static 'css/frms.css' %}" rel="stylesheet">
+    <title>{%  block title %}{% endblock %}</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header-container"></div>
+        <div class="header-containertwo"></div>
+        <div class="content-container">
+            Agenda<br>de<br> Contatos
+        </div>
+        <div class="content-containertwo">
+            <div class="form">
+                {%  block formLogin %}{% endblock %}
+            </div>
+        </div>
+        <div class="footer-container"></div>
+        <div class="footer-containertwo"></div>
+    </div>
+</body>
+</html>

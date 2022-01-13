@@ -1,0 +1,39 @@
+{% extends 'baselog.html' %}
+{%  block formLogin %}
+    <span class="padding-bottom--15">Faça login em sua conta</span>
+    <form id="stripe-login"  action="." method="POST">
+        {% csrf_token %}
+        <div class="field padding-bottom--24">
+        <label for="username">Username</label>
+        {{ form.username }}
+        </div>
+        <div class="field padding-bottom--24">
+            <div class="grid--50-50">
+                <label for="password">Password</label>
+                {% comment %} <div class="reset-pass">
+                    <a href="#">Esqueceu sua senha?</a>
+                </div> {% endcomment %}
+            </div>
+            {{ form.password }}
+        </div>
+        <div class="field field-checkbox padding-bottom--24 flex-flex align-center">
+            <label for="checkbox">
+                <input type="checkbox" name="checkbox"> Mantenha-me conectado
+            </label>
+        </div>
+        <div class="field padding-bottom--24">
+            <input type="submit" name="submit" value="login">
+        </div>
+        {% comment %} <div class="field">
+            <a class="ssolink" href="#">Use single sign-on (Google) instead</a>
+        </div> {% endcomment %}
+    </form>
+    <div class="footer-link padding-top--24">
+        <span>Ainda não tem uma conta? <a href="{% url 'create_user' %}">cadastre-se</a> </span>
+        <div class="listing padding-top--24 padding-bottom--24 flex-flex center-center">
+            <span><a href="#">©alguma coisa</a></span>
+            <span><a href="#">Contato</a></span>
+            <span><a href="#">Privacy & terms</a></span>
+        </div>
+    </div>
+{% endblock %}
