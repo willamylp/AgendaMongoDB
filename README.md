@@ -14,7 +14,11 @@ A Agenda é um projeto que consiste na coleta e repositório de dados dos seus c
 - unittest - este framework de teste é adequado para testes unitários e de integração.  
 - LiveServerTestCase - ferramenta para usar diferentes frameworks de teste.  
 - Selenium - framework para simular um usuário interagindo com um navegador.
-   
+
+## Documentação:
+[User Stories](https://github.com/willamylp/AgendaMongoDB/blob/teste_software/docs/doc-userstories.md)  
+[Documento de Visão](https://github.com/willamylp/AgendaMongoDB/blob/teste_software/docs/doc-visao.md)  
+ 
 
 ## Ferramentas necessárias para execução do projeto no Windows:
 * Python 3.7 + pip  
