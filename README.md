@@ -108,3 +108,8 @@ E visualizar no navegador no http://127.0.0.1:8000/
 ## Em caso de erro verifique  
 - verifique se seguiu os passos de execução corretamente.  
 - Faça a exclusão dos arquivos de cache gerados, das migrations e do banco de dados db.sqlite3 e execute as instruções acima novamente.  
+## Informações e Ferramentas necessárias para execução dos Testes  projeto:  
+[Teste de Unidade](https://github.com/willamylp/AgendaMongoDB/tree/develop/docs/TESTE_UNIDADE.md)  
+[Teste de Integração](https://github.com/willamylp/AgendaMongoDB/tree/develop/docs/TESTE_INTEGRACAO.md)  
+[Cobertura Dos Testes](https://github.com/willamylp/AgendaMongoDB/tree/develop/docs/COBERTURA_TESTES.md)
+[Funcionais Automatizados](https://github.com/willamylp/AgendaMongoDB/tree/develop/docs/TESTE_FUNC_AUTOMATIZADOS.md)
