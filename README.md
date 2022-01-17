@@ -1,7 +1,12 @@
 # Agenda - Site
 Agenda de Contatos usando Python Django  
 ## Descrição:  
-A Agenda é um projeto que consiste na coleta e repositório de dados dos seus contatos através de um backup online. Dessa forma, você consegue acessar tais informações em qualquer momento e em qualquer dispositivo. A página funciona através de um sistema de login que dará acesso a uma página central da qual conseguirá gerir os dados de seus contatos. Ademais, consegue gerar um relatório (pdf, excel, etc) com todos os dados cadastrados.
+A Agenda é um projeto que consiste na coleta e repositório de dados dos seus contatos através de um backup online. Dessa forma, você consegue acessar tais informações em qualquer momento e em qualquer dispositivo. A página funciona através de um sistema de login que dará acesso a uma página central da qual conseguirá gerir os dados de seus contatos. Ademais, consegue gerar um relatório (pdf, excel, etc) com todos os dados cadastrados.  
+## Documentação:
+[Requisitos + Modelo](https://github.com/willamylp/AgendaMongoDB/blob/develop/docs/REQUISITOS.md)  
+[Documento de Visão](https://github.com/willamylp/AgendaMongoDB/blob/develop/docs/doc-visao.md)  
+[User Stories](https://github.com/willamylp/AgendaMongoDB/blob/develop/docs/doc-userstories.md)
+
 
 ## Equipe:
 [Clodoaldo Brito](https://github.com/Brito-Response)  
@@ -111,5 +116,5 @@ E visualizar no navegador no http://127.0.0.1:8000/
 ## Informações e Ferramentas necessárias para execução dos Testes  projeto:  
 [Teste de Unidade](https://github.com/willamylp/AgendaMongoDB/tree/develop/docs/TESTE_UNIDADE.md)  
 [Teste de Integração](https://github.com/willamylp/AgendaMongoDB/tree/develop/docs/TESTE_INTEGRACAO.md)  
-[Cobertura Dos Testes](https://github.com/willamylp/AgendaMongoDB/tree/develop/docs/COBERTURA_TESTES.md)
-[Funcionais Automatizados](https://github.com/willamylp/AgendaMongoDB/tree/develop/docs/TESTE_FUNC_AUTOMATIZADOS.md)
+[Cobertura Dos Testes](https://github.com/willamylp/AgendaMongoDB/tree/develop/docs/COBERTURA_TESTES.md)  
+[Testes Funcionais Automatizados](https://github.com/willamylp/AgendaMongoDB/tree/develop/docs/TESTE_FUNC_AUTOMATIZADOS.md)

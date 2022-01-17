@@ -1,26 +1,3 @@
-# Documento de Visão
-
-Documento construído a partido do **Modelo BSI - Doc 001 - Documento de Visão** que pode ser encontrado no
-link: https://docs.google.com/document/d/1DPBcyGHgflmz5RDsZQ2X8KVBPoEF5PdAz9BBNFyLa6A/edit?usp=sharing
-
-## Equipe e Definição de Papéis
-
-Membro     |     Papel   |   E-mail   |
----------  | ----------- | ---------- |
-Clodoaldo  | Gerente, Analista, Testador, Desenvolvedor |  clodoaldo.brtp4@gmail.com
-Gesson     | Gerente, Analista, Testador, Desenvolvedor |  gerson10caicorn@gmail.com
-Willamy    | Gerente, Analista, Testador, Desenvolvedor |  willamy.wlp@gmail.com
-Gustave    | Gerente, Analista, Testador, Desenvolvedor |  gpersijn@outlook.com
-
-### Matriz de Competências
-
-Membro     |     Competências   |
----------  | ----------- |  
-Clodoaldo  | Desenvolvedor Python |  
-Gesson     | Desenvolvedor Python |  
-Willamy    | Desenvolvedor Python |  
-Gustave    | Desenvolvedor Python |
-
 ## Perfis dos Usuários
 
 O sistema poderá ser utilizado por diversos usuários. Temos os seguintes perfis/atores:
@@ -73,16 +50,3 @@ Requisito                                 | Descrição   |
 RNF001 - Deve ser acessível via navegador | Deve abrir perfeitamento no Firefox e principalmente no Chrome onde serão realizados testes com chrome webdrive. |
 RNF002 - Consultas deve ser eficiente | O sistema deve executar as consultas em milessegundos |
 RNF003 - Log e histórico de acesso e funções | Deve manter um log de todos os acessos e das funções executadas pelo usuário |
-
-## Riscos
-
-Tabela com o mapeamento dos riscos do projeto, as possíveis soluções e os responsáveis.
-
-Data | Risco | Prioridade | Responsável | Status | Providência/Solução |
------- | ------ | ------ | ------ | ------ | ------ |
-10/03/2018 | Não aprendizado das ferramentas utilizadas pelos componentes do grupo | Alta | Todos | Vigente | Reforçar estudos sobre as ferramentas e aulas com a integrante que conhece a ferramenta |
-10/03/2018 | Ausência por qualquer motivo do cliente | Média | Gerente | Vigente | Planejar o cronograma tendo em base a agenda do cliente |
-10/03/2018 | Divisão de tarefas mal sucedida | Baixa | Gerente | Vigente | Acompanhar de perto o desenvolvimento de cada membro da equipe |
-10/03/2018 | Implementação de protótipo com as tecnologias | Alto | Todos | Resolvido | Encontrar tutorial com a maioria da tecnologia e implementar um caso base do sistema |
-
-### Referências
