@@ -19,13 +19,13 @@ class MySeleniumTests(StaticLiveServerTestCase):
     def test_login(self):
         self.selenium.get('%s%s' % (self.live_server_url, ''))
         username_input = self.selenium.find_element_by_name("username")
-        username_input.send_keys('caduzera')
+        username_input.send_keys('Jhones')
         password_input = self.selenium.find_element_by_name("password")
-        password_input.send_keys('cadu3000')
+        password_input.send_keys('jhones3000')
+        self.assertIsNone(self.selenium.find_element_by_xpath('//input[@value="login"]').click())
         # for i in range(10):
         #     print("Tick")
         #     time.sleep(1)
-        self.selenium.find_element_by_xpath('//input[@value="login"]').click()
 
 
 

@@ -19,7 +19,7 @@ class UsuarioTestCase(TestCase):
     def test_if_creating_user_as_existing_username(self):
         try:
             User.objects.create( username ='Magaly', first_name = 'Ferreira',
-            last_name = 'Marcos', email = 'Mariana@gmail.com', bio = 'qualquer textão', is_staff=True, is_active = False)
+            last_name = 'Marcos',password="ygfy4545#fhh", email = 'Mariana@gmail.com', bio = 'qualquer textão', is_staff=True, is_active = False)
         except:
             ERROR = 'UNIQUE constraint failed: Usuario_user.username'
         self.assertEqual(ERROR,'UNIQUE constraint failed: Usuario_user.username')
@@ -27,7 +27,7 @@ class UsuarioTestCase(TestCase):
     def test_if_creating_user_as_existing_email(self):
         try:
             User.objects.create( username ='Mariana', first_name = 'Ferreira',
-            last_name = 'Marcos', email = 'Julia@gmail.com', bio = 'qualquer textão', is_staff=True, is_active = False)
+            last_name = 'Marcos',password="ygfy4545#fhh", email = 'Julia@gmail.com', bio = 'qualquer textão', is_staff=True, is_active = False)
         except:
             ERROR = 'UNIQUE constraint failed: Usuario_user.email' 
         self.assertEqual(ERROR,'UNIQUE constraint failed: Usuario_user.email')
