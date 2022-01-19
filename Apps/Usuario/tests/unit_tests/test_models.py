@@ -3,18 +3,19 @@ from django.test import TestCase
 # Create your tests here.
 from django.test import TestCase
 from Apps.Usuario.models import User
+from Apps.Usuario.forms import UserCreationForms
 
 class UsuarioTestCase(TestCase):
     def setUp(self):
-        User.objects.create( username ='Magaly', first_name = 'Julia',
-        last_name = 'Ferreira',password="ygfy4545#fhh", email = 'Julia@gmail.com',
+        User.objects.create( username ='Magaly', first_name = 'Julia',last_name = 'Ferreira',password="ygfy4545#fhh", email = 'Julia@gmail.com',
         bio = 'qualquer textão', is_staff=False, is_active = False)
 
-
     def test_user_created_is_saved(self):
-        user = User.objects.get(username ='Magaly')
-        self.assertEquals(user.username,'Magaly')
-
+        data_forg={"username":"Bruno","first_name":"Bruno","last_name":"Ferreira","password1":"ygfy4545#fhh","password2":"ygfy4545#fhh","email":"Bruno@gmail.com"}
+        userform = UserCreationForms(data_forg)
+        userform.save()
+        user = User.objects.get(username ='Bruno')
+        self.assertEquals(user.username,'Bruno')
     
     def test_if_creating_user_as_existing_username(self):
         try:
@@ -31,3 +32,4 @@ class UsuarioTestCase(TestCase):
         except:
             ERROR = 'UNIQUE constraint failed: Usuario_user.email' 
         self.assertEqual(ERROR,'UNIQUE constraint failed: Usuario_user.email')
+    

@@ -19,8 +19,9 @@ def homeUserLogin(request):
 def createUser(request):
     form = UserCreationForms(request.POST or None)
     if form.is_valid():
+        form.full_clean()
         form.save()
-
+        
         #autentic
         user = form.cleaned_data.get("username")
         password = form.cleaned_data.get("password2")
