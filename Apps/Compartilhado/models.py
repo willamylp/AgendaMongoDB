@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 class Compartilhados(models.Model):
     nome = models.CharField(
@@ -14,6 +15,9 @@ class Compartilhados(models.Model):
         max_length=25,
         blank=False
     )
-    compcategoria = models.ForeignKey("Categoria.Categorias",blank=True,null=True,on_delete=models.RESTRICT)
+    compcategoria = models.ForeignKey(
+        "Categoria.Categorias", blank=True, null=True,
+        on_delete=models.RESTRICT)
+
     def __str__(self):
         return self.nome

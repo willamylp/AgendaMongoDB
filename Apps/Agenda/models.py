@@ -1,5 +1,6 @@
-from django.db import models
 from Apps.Usuario.models import User
+from django.db import models
+
 
 # Create your models here.
 class Contatos(models.Model):
@@ -16,7 +17,9 @@ class Contatos(models.Model):
         max_length=25,
         blank=False
     )
-    # contatocategoria = models.OneToOneField("Categoria.Categorias",default="",on_delete=models.RESTRICT)
-    contatosuser = models.ForeignKey(User,on_delete=models.CASCADE)
+    # contatocategoria = models.OneToOneField("Categoria.Categorias",default=""
+    # ,on_delete=models.RESTRICT)
+    contatosuser = models.ForeignKey(User, on_delete=models.CASCADE)
+
     def __str__(self):
         return self.nome

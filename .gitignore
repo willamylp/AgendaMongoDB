@@ -119,6 +119,7 @@ virtualENV/
 
 # mypy
 .mypy_cache/
+.mypy_cache/*
 .dmypy.json
 dmypy.json
 

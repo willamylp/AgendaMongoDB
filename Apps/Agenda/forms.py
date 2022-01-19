@@ -1,7 +1,6 @@
-from .models import Contatos
-from django import forms
 from django.forms import ModelForm
-#from djongo.models import forms
+
+from .models import Contatos
 
 
 class AgendaForm(ModelForm):

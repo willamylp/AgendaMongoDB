@@ -1,14 +1,16 @@
-from django.contrib import admin, auth
+from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-from .models import User
+
 from .forms import UserChangeForms, UserCreationForms
+from .models import User
+
 
 # Register your models here.
 @admin.register(User)
-class UserAdmin(UserAdmin):
+class UserAdmin(UserAdmin):  # type: ignore
     form = UserChangeForms
     add_form = UserCreationForms
     model = User
     fieldsets = UserAdmin.fieldsets + (
-        ("campos personalizados",{"fields":("bio",)}),
+        ("campos personalizados", {"fields": ("bio",)}),
     )
