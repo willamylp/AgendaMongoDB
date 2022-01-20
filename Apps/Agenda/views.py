@@ -13,8 +13,8 @@ def RegistrarContato(request):
     userDonoContato = User.objects.get(id=user.id)
     form = AgendaForm(request.POST or None)
     if(form.is_valid()):
-        Contatos = form.save(commit=False)
-        Contatos.contatosuser = userDonoContato
+        form_copy = form.save(commit=False)
+        form_copy.contatosuser = userDonoContato
         form.save()
         messages.success(request, 'Contato Registrado com Sucesso!')
         return redirect('/agenda/ListarContatos')
