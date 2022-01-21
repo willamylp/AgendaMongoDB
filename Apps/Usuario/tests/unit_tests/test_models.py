@@ -18,7 +18,7 @@ class UsuarioTestCase(TestCase):
         userform = UserCreationForms(data_forg)
         userform.save()
         user = User.objects.get(username='Bruno')
-        self.assertEquals(user.username, 'Bruno')
+        self.assertEqual(user.username, 'Bruno')
 
     def test_if_creating_user_as_existing_username(self):
         try:

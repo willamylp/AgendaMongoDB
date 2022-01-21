@@ -10,7 +10,7 @@ class UsuarioTestViews(TestCase):
 
     def test_urls_exists(self):
         resolver = resolve('/new/')
-        self.assertEquals(resolver.url_name, 'create_user')
+        self.assertEqual(resolver.url_name, 'create_user')
 
     def test_template_used_to_render_the_view_create(self):
         response = self.client.get(reverse('create_user'))
@@ -22,7 +22,7 @@ class UsuarioTestViews(TestCase):
 
     def test_view_loginUser_home_status_code_200(self):
         response = self.client.get(reverse('loginUser_home'))
-        self.assertEquals(response.status_code, 200)
+        self.assertEqual(response.status_code, 200)
 
     def test_template_used_to_render_the_view(self):
         response = self.client.get(reverse('loginUser_home'))
@@ -31,4 +31,4 @@ class UsuarioTestViews(TestCase):
     def test_when_calling_the_view_without_authenticating_if_it_is_redirected(
             self):
         response = self.client.get(reverse('ListarContato'))
-        self.assertEquals(response.status_code, 302)
+        self.assertEqual(response.status_code, 302)
