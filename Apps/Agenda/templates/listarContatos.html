@@ -53,17 +53,7 @@
                                         <th>EDITAR | DELETAR</th>
                                     </tr>
                                 </thead>
-                                {% comment %} 
-                                <tfoot>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>NOME COMPLETO</th>
-                                        <th>E-MAIL</th>
-                                        <th>TELEFONE</th>
-                                        <th>EDITAR | DELETAR</th>
-                                    </tr>
-                                </tfoot>
-                                {% endcomment %}
+
                                 <tbody>
                                     {% for contato in contatos %}
                                     <tr>
@@ -81,6 +71,10 @@
                                             </a>                          
                                             <button type="button" class="btn bg-red waves-effect" onClick="ConfirmarDelete('{{ contato.id }}')">
                                                 <i class="material-icons">delete_forever</i>
+                                            </button>
+                                            {% comment %} editando  {% endcomment %}
+                                            <button type="button" class="btn waves-effect waves-yellow" onClick="#">
+                                                <i class="material-icons">share</i>
                                             </button>
                                         </td>
                                     </tr>

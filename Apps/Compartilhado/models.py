@@ -15,8 +15,8 @@ class Compartilhados(models.Model):
         max_length=25,
         blank=False
     )
-    compcategoria = models.ForeignKey(
-        "Categoria.Categorias", blank=True, null=True,
+    id_compartilhou = models.ForeignKey(
+        "Usuario.User", blank=False, null=False,
         on_delete=models.RESTRICT)
 
     def __str__(self):

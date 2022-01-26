@@ -17,6 +17,7 @@ class Contatos(models.Model):
         max_length=25,
         blank=False
     )
+    compartilhado = models.BooleanField(default=False)
     # contatocategoria = models.OneToOneField("Categoria.Categorias",default=""
     # ,on_delete=models.RESTRICT)
     contatosuser = models.ForeignKey(User, on_delete=models.CASCADE)
