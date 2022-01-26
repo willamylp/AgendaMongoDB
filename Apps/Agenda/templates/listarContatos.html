@@ -72,10 +72,12 @@
                                             <button type="button" class="btn bg-red waves-effect" onClick="ConfirmarDelete('{{ contato.id }}')">
                                                 <i class="material-icons">delete_forever</i>
                                             </button>
-                                            {% comment %} editando  {% endcomment %}
-                                            <button type="button" class="btn waves-effect waves-yellow" onClick="#">
-                                                <i class="material-icons">share</i>
-                                            </button>
+                                            {% comment %} editando Shared {% endcomment %}
+                                            <a href="{% url 'create_share' contato.id %}">
+                                                <button type="button" class="btn waves-effect waves-yellow" onClick="#">
+                                                    <i class="material-icons">share</i>
+                                                </button>
+                                            </a>
                                         </td>
                                     </tr>
                                     {% endfor %}

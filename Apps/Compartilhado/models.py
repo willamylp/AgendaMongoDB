@@ -1,3 +1,4 @@
+from Apps.Usuario.models import User
 from django.db import models
 
 
@@ -15,9 +16,9 @@ class Compartilhados(models.Model):
         max_length=25,
         blank=False
     )
-    id_compartilhou = models.ForeignKey(
-        "Usuario.User", blank=False, null=False,
-        on_delete=models.RESTRICT)
+    compartilhado = models.BooleanField(default=False)
+    id_compartilhou = models.ForeignKey(User, blank=False, null=False,
+                                        on_delete=models.RESTRICT)
 
     def __str__(self):
         return self.nome
