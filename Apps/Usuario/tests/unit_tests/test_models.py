@@ -27,7 +27,7 @@ class UsuarioTestCase(TestCase):
                                 email='Mariana@gmail.com',
                                 bio='qualquer textão',
                                 is_staff=True, is_active=False)
-        except:
+        except:  # noqa: E722
             ERROR = 'UNIQUE constraint failed: Usuario_user.username'
         self.assertEqual(
             ERROR, 'UNIQUE constraint failed: Usuario_user.username')
@@ -38,6 +38,6 @@ class UsuarioTestCase(TestCase):
                                 last_name='Marcos', password="ygfy4545#fhh",
                                 email='Julia@gmail.com', bio='qualquer textão',
                                 is_staff=True, is_active=False)
-        except:
+        except:  # noqa: E722
             ERROR = 'UNIQUE constraint failed: Usuario_user.email'
         self.assertEqual(ERROR, 'UNIQUE constraint failed: Usuario_user.email')

@@ -1,18 +1,16 @@
 from Apps.Agenda.models import Contatos
-from django.shortcuts import redirect, render  # noqa: F401
+from django.shortcuts import get_object_or_404, redirect, render  # noqa: F401
 
-from .forms import CompartilahadoForm
+from .models import Compartilhados
 
 
-# Create your views here.
-# contatosuser foi quem compartilhou
 def CreateShare(request, id):
-    compartilhado = Contatos.objects.get(id=id)
-
-    form = CompartilahadoForm(request.POST or None, instance=compartilhado)
-    if form.is_valid():
-        form_comp = form.save(commit=False)
-        form_comp.id_compartilhou = compartilhado.id
-        form_comp.save()
-        return redirect('/agenda/ListarContatos')
-    return render(request, 'create_shared.html', {'form': form})
+    compart = get_object_or_404(Contatos, id=id)
+    compart.compartilhado = True
+    compart.save()
+    cmp = Compartilhados.objects.create(nome=compart.nome,
+                                        email=compart.email,
+                                        telefone=compart.telefone,
+                                        quemcompar=compart.contatosuser)
+    cmp.save()
+    return redirect('/agenda/ListarContatos')

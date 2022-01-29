@@ -16,9 +16,8 @@ class Compartilhados(models.Model):
         max_length=25,
         blank=False
     )
-    compartilhado = models.BooleanField(default=False)
-    id_compartilhou = models.ForeignKey(User, blank=False, null=False,
-                                        on_delete=models.RESTRICT)
+    quemcompar = models.ForeignKey(User, blank=False, null=False,
+                                   on_delete=models.RESTRICT)
 
     def __str__(self):
         return self.nome

@@ -50,7 +50,7 @@
                                         <th>NOME COMPLETO</th>
                                         <th>E-MAIL</th>
                                         <th>TELEFONE</th>
-                                        <th>EDITAR | DELETAR</th>
+                                        <th>EDITAR | DELETAR | COMPARTILHAR</th>
                                     </tr>
                                 </thead>
 
@@ -72,12 +72,21 @@
                                             <button type="button" class="btn bg-red waves-effect" onClick="ConfirmarDelete('{{ contato.id }}')">
                                                 <i class="material-icons">delete_forever</i>
                                             </button>
-                                            {% comment %} editando Shared {% endcomment %}
+                                            {% comment %}  Shared {% endcomment %}
+                                            {% if not contato.compartilhado %}
+                                                <a href="{% url 'create_share' contato.id %}">
+                                                    <button type="button" class="btn waves-effect waves-yellow" onClick="#">
+                                                        <i class="material-icons">share</i>
+                                                    </button>
+                                                </a>
+                                            {% else %}
+                                            {% comment %}  UnShared {% endcomment %}
                                             <a href="{% url 'create_share' contato.id %}">
                                                 <button type="button" class="btn waves-effect waves-yellow" onClick="#">
-                                                    <i class="material-icons">share</i>
+                                                    <i class="material-icons">undo</i>
                                                 </button>
                                             </a>
+                                            {% endif %}
                                         </td>
                                     </tr>
                                     {% endfor %}
