@@ -5,7 +5,7 @@ from django.urls import resolve, reverse
 
 class CompartilhadoTestViews(TestCase):
 
-    def test_urls_craete_share_exists(self):
+    def test_urls_create_share_exists(self):
         resolver = resolve('/compartilhado/newshared/1/')
         self.assertEqual(resolver.url_name, 'create_share')
 
