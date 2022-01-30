@@ -18,7 +18,7 @@ class MySeleniumTests(StaticLiveServerTestCase):
         cls.selenium.quit()
         super().tearDownClass()
 
-    def sleep5(void):
+    def sleep5(self):
         for i in range(5):
             time.sleep(1)
 

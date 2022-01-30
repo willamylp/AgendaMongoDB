@@ -1,3 +1,5 @@
+from typing import Final
+
 from Apps.Usuario.models import User
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -6,6 +8,8 @@ from django.views.decorators.http import require_http_methods
 
 from .forms import AgendaForm
 from .models import Contatos
+
+CONTATO_LIST: Final = "/agenda/ListarContatos"
 
 
 @login_required
@@ -19,7 +23,7 @@ def RegistrarContato(request):
         form_copy.contatosuser = userDonoContato
         form_copy.save()
         messages.success(request, 'Contato Registrado com Sucesso!')
-        return redirect('/agenda/ListarContatos')
+        return redirect(CONTATO_LIST)
     return render(request, './formContato.html', {'form': form, 'user': user})
 
 
@@ -44,7 +48,7 @@ def AtualizarContato(request, id):
 
     if(form.is_valid()):
         form.save()
-        return redirect('/agenda/ListarContatos')
+        return redirect(CONTATO_LIST)
     return render(request, './formContato.html', {'form': form})
 
 
@@ -53,4 +57,4 @@ def AtualizarContato(request, id):
 def DeletarContato(request, id):
     contatoDelete = get_object_or_404(Contatos, pk=id)  # _id=ObjectId(id)
     contatoDelete.delete()
-    return redirect('/agenda/ListarContatos')
+    return redirect(CONTATO_LIST)
