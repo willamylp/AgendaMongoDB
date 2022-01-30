@@ -21,3 +21,7 @@ class CompartilhadoTestViews(TestCase):
     def test_view_func_based_call_is(self):
         view = resolve(reverse('create_user'))
         self.assertNotIsInstance(view.func, views.ListShare)
+
+    def test_context_list_share_if_passed_object_list(self):
+        response = self.client.get(reverse('list_share'))
+        self.assertIsInstance(response.context_data, dict)
