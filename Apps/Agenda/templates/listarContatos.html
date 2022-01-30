@@ -27,6 +27,12 @@
                                         <span>NOVO REGISTRO</span>
                                     </button> 
                                 </a>
+                                <a href="{% url 'list_share' %}" class="linkTextBold" style="float: right; margin: -10px 10px 10px 10px;">
+                                    <button type="button" class="btn bg-cyan waves-effect linkTextBold">
+                                        <i class="material-icons">share</i>
+                                        <span>COMPARTILHADOS</span>
+                                    </button> 
+                                </a>
                             </h2>
                         </div>
                         <div class="body">
@@ -50,20 +56,10 @@
                                         <th>NOME COMPLETO</th>
                                         <th>E-MAIL</th>
                                         <th>TELEFONE</th>
-                                        <th>EDITAR | DELETAR</th>
+                                        <th>EDITAR | DELETAR | COMPARTILHAR</th>
                                     </tr>
                                 </thead>
-                                {% comment %} 
-                                <tfoot>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>NOME COMPLETO</th>
-                                        <th>E-MAIL</th>
-                                        <th>TELEFONE</th>
-                                        <th>EDITAR | DELETAR</th>
-                                    </tr>
-                                </tfoot>
-                                {% endcomment %}
+
                                 <tbody>
                                     {% for contato in contatos %}
                                     <tr>
@@ -82,6 +78,21 @@
                                             <button type="button" class="btn bg-red waves-effect" onClick="ConfirmarDelete('{{ contato.id }}')">
                                                 <i class="material-icons">delete_forever</i>
                                             </button>
+                                            {% comment %}  Shared {% endcomment %}
+                                            {% if not contato.compartilhado %}
+                                                <a href="{% url 'create_share' contato.id %}">
+                                                    <button type="button" class="btn waves-effect waves-yellow" onClick="#">
+                                                        <i class="material-icons">share</i>
+                                                    </button>
+                                                </a>
+                                            {% else %}
+                                            {% comment %}  UnShared {% endcomment %}
+                                            <a href="{% url 'create_share' contato.id %}">
+                                                <button type="button" class="btn waves-effect waves-yellow" onClick="#">
+                                                    <i class="material-icons">undo</i>
+                                                </button>
+                                            </a>
+                                            {% endif %}
                                         </td>
                                     </tr>
                                     {% endfor %}

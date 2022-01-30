@@ -4045,33 +4045,29 @@ section.contentLoading {
 
 .datepicker table tr td.active {
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#008080), to(#008080));
-  background-image: -webkit-linear-gradient(to bottom, #008080, #008080);
   background-image: -o-linear-gradient(to bottom, #008080, #008080);
   background-image: linear-gradient(to bottom, #008080, #008080);
   border: none; }
   .datepicker table tr td.active:hover.active {
     background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#008080), to(#008080));
-    background-image: -webkit-linear-gradient(to bottom, #008080, #008080);
+
     background-image: -o-linear-gradient(to bottom, #008080, #008080);
     background-image: linear-gradient(to bottom, #008080, #008080);
     border: none; }
 
 .datepicker table tr td.selected {
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#008080), to(#008080));
-  background-image: -webkit-linear-gradient(to bottom, #008080, #008080);
   background-image: -o-linear-gradient(to bottom, #008080, #008080);
   background-image: linear-gradient(to bottom, #008080, #008080);
   border: none; }
 
 .datepicker table tr td span.active {
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#008080), to(#008080));
-  background-image: -webkit-linear-gradient(to bottom, #008080, #008080);
   background-image: -o-linear-gradient(to bottom, #008080, #008080);
   background-image: linear-gradient(to bottom, #008080, #008080);
   border: none; }
   .datepicker table tr td span.active:hover.active {
     background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#008080), to(#008080));
-    background-image: -webkit-linear-gradient(to bottom, #008080, #008080);
     background-image: -o-linear-gradient(to bottom, #008080, #008080);
     background-image: linear-gradient(to bottom, #008080, #008080);
     border: none; }

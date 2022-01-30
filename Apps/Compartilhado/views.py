@@ -1,3 +1,25 @@
-from django.shortcuts import render  # noqa: F401
+from Apps.Agenda.models import Contatos
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import get_object_or_404, redirect, render  # noqa: F401
+from django.views.decorators.http import require_http_methods
+from django.views.generic.list import ListView
 
-# Create your views here.
+from .models import Compartilhados
+
+
+@login_required
+@require_http_methods(["GET", "POST"])
+def CreateShare(request, id):
+    compart = get_object_or_404(Contatos, id=id)
+    compart.compartilhado = True
+    compart.save()
+    cmp = Compartilhados.objects.create(nome=compart.nome,
+                                        email=compart.email,
+                                        telefone=compart.telefone,
+                                        quemcompar=compart.contatosuser)
+    cmp.save()
+    return redirect('/agenda/ListarContatos')
+
+
+class ListShare(ListView):
+    model = Compartilhados

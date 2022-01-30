@@ -4,7 +4,6 @@ from django.db import models
 
 # Create your models here.
 class Contatos(models.Model):
-    # _id = models.ObjectIdField()
     nome = models.CharField(
         max_length=100,
         blank=False
@@ -17,8 +16,7 @@ class Contatos(models.Model):
         max_length=25,
         blank=False
     )
-    # contatocategoria = models.OneToOneField("Categoria.Categorias",default=""
-    # ,on_delete=models.RESTRICT)
+    compartilhado = models.BooleanField(default=False)
     contatosuser = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
