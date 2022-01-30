@@ -1,16 +1,26 @@
+{% load static %}
+{% load get_item %}
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    {% for compar in object_list %}
-        <li>{{compar.nome}}</li>
-            {{compar.email}}</br>
-            {{compar.telefone}}
-    {% endfor %}
+<html lang="pt-br">
+    {% include "../head.html" %}
+<body class="theme-teal">
+    {% include "../pageLoader.html" %}
+    <div class="overlay"></div>
+    {% include "../topBar.html" %}
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row clearfix">
+                <div class="col-xs-12 col-sm-12 ">
+                    {% for compar in object_list %}
+                        <div class="card">
+                                {{compar.nome|upper}}{{compar.email}}{{compar.telefone}}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <a href="{% url 'ListarContato' %}" style="display: flex;align-items: center;justify-content: center;">Voltar para lista de Contatos</a>
+    </section>
+    {% include "../scripts.html" %}
 </body>
 </html>

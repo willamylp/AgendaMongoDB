@@ -1,10 +1,12 @@
 from django.contrib.auth import authenticate, login
 from django.shortcuts import redirect, render
+from django.views.decorators.http import require_http_methods
 
 from .forms import UserAutenticationForm, UserCreationForms
 
 
 # Create your views here.
+@require_http_methods(["GET", "POST"])
 def homeUserLogin(request):
     form = UserAutenticationForm(request, data=request.POST)
     if form.is_valid():
@@ -17,6 +19,7 @@ def homeUserLogin(request):
     return render(request, 'index.html', {'form': form})
 
 
+@require_http_methods(["GET", "POST"])
 def createUser(request):
     form = UserCreationForms(request.POST or None)
     if form.is_valid():

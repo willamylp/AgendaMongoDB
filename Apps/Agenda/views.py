@@ -2,12 +2,14 @@ from Apps.Usuario.models import User
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, redirect, render
+from django.views.decorators.http import require_http_methods
 
 from .forms import AgendaForm
 from .models import Contatos
 
 
 @login_required
+@require_http_methods(["GET", "POST"])
 def RegistrarContato(request):
     user = request.user
     userDonoContato = User.objects.get(id=user.id)
@@ -22,6 +24,7 @@ def RegistrarContato(request):
 
 
 @login_required
+@require_http_methods(["GET"])
 def ListarContatos(request):
     """Following the logic of the software, we will have to use the
         authentication feature, more precisely to know which user is
@@ -34,6 +37,7 @@ def ListarContatos(request):
 
 
 @login_required
+@require_http_methods(["GET", "POST"])
 def AtualizarContato(request, id):
     contato = get_object_or_404(Contatos,  pk=id)  # _id=ObjectId(id)
     form = AgendaForm(request.POST, instance=contato)
@@ -45,6 +49,7 @@ def AtualizarContato(request, id):
 
 
 @login_required
+@require_http_methods(["GET", "POST"])
 def DeletarContato(request, id):
     contatoDelete = get_object_or_404(Contatos, pk=id)  # _id=ObjectId(id)
     contatoDelete.delete()

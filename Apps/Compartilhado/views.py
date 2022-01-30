@@ -1,12 +1,14 @@
 from Apps.Agenda.models import Contatos
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404, redirect, render  # noqa: F401
+from django.views.decorators.http import require_http_methods
 from django.views.generic.list import ListView
 
 from .models import Compartilhados
 
 
 @login_required
+@require_http_methods(["GET", "POST"])
 def CreateShare(request, id):
     compart = get_object_or_404(Contatos, id=id)
     compart.compartilhado = True
