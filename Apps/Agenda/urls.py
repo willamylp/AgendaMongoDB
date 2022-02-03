@@ -1,12 +1,12 @@
 from django.urls import path
 
-from .views import (AtualizarContato, DeletarContato, ListarContatos,
-                    RegistrarContato)
+from .views import (atualizar_contato, deletar_contato, listar_contatos,
+                    registrar_contato)
 
 urlpatterns = [
-    path('RegistrarContato/', RegistrarContato, name="RegistrarContato"),
-    path('ListarContatos/', ListarContatos, name="ListarContato"),
-    path('AtualizarContato/<str:id>', AtualizarContato, name="AtualizarContato"
-         ),
-    path('DeletarContato/<str:id>', DeletarContato, name="DeletarContato"),
+    path('RegistrarContato/', registrar_contato, name="RegistrarContato"),
+    path('ListarContatos/', listar_contatos, name="ListarContato"),
+    path('AtualizarContato/<str:id>', atualizar_contato,
+         name="AtualizarContato"),
+    path('DeletarContato/<str:id>', deletar_contato, name="DeletarContato"),
 ]

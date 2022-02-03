@@ -9,7 +9,7 @@ from .models import Compartilhados
 
 @login_required
 @require_http_methods(["GET", "POST"])
-def CreateShare(request, id):
+def create_share(request, id):
     compart = get_object_or_404(Contatos, id=id)
     compart.compartilhado = True
     compart.save()
