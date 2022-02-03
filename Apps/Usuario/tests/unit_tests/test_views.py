@@ -18,7 +18,7 @@ class UsuarioTestViews(TestCase):
 
     def test_view_func_based_call_is(self):
         view = resolve(reverse('create_user'))
-        self.assertIs(view.func, views.createUser)
+        self.assertIs(view.func, views.create_user)
 
     def test_view_loginUser_home_status_code_200(self):
         response = self.client.get(reverse('loginUser_home'))

@@ -1,4 +1,3 @@
-from distutils.log import error
 from typing import Final
 
 from Apps.Usuario.forms import UserCreationForms
@@ -32,7 +31,7 @@ class UsuarioTestCase(TestCase):
                                 email='Mariana@gmail.com',
                                 bio='textão',
                                 is_staff=True, is_active=False)
-        except error:  # noqa: E722
+        except:  # noqa: E722
             ERROR = 'UNIQUE constraint failed: Usuario_user.username'
         self.assertEqual(
             ERROR, 'UNIQUE constraint failed: Usuario_user.username')
@@ -43,6 +42,6 @@ class UsuarioTestCase(TestCase):
                                 last_name='Marcos', password=PW,
                                 email='Julia@gmail.com', bio='qualquer texto',
                                 is_staff=True, is_active=False)
-        except error:  # noqa: E722
+        except:  # noqa: E722
             ERROR = 'UNIQUE constraint failed: Usuario_user.email'
         self.assertEqual(ERROR, 'UNIQUE constraint failed: Usuario_user.email')
