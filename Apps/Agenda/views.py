@@ -14,7 +14,7 @@ CONTATO_LIST: Final = "/agenda/ListarContatos"
 
 @login_required
 @require_http_methods(["GET", "POST"])
-def RegistrarContato(request):
+def registrar_contato(request):
     user = request.user
     userDonoContato = User.objects.get(id=user.id)
     form = AgendaForm(request.POST or None)
@@ -29,7 +29,7 @@ def RegistrarContato(request):
 
 @login_required
 @require_http_methods(["GET"])
-def ListarContatos(request):
+def listar_contatos(request):
     """Following the logic of the software, we will have to use the
         authentication feature, more precisely to know which user is
         authenticated to display his contacts | using djando's authentication
@@ -42,7 +42,7 @@ def ListarContatos(request):
 
 @login_required
 @require_http_methods(["GET", "POST"])
-def AtualizarContato(request, id):
+def atualizar_contato(request, id):
     contato = get_object_or_404(Contatos,  pk=id)  # _id=ObjectId(id)
     form = AgendaForm(request.POST, instance=contato)
 
@@ -54,7 +54,7 @@ def AtualizarContato(request, id):
 
 @login_required
 @require_http_methods(["GET", "POST"])
-def DeletarContato(request, id):
+def deletar_contato(request, id):
     contatoDelete = get_object_or_404(Contatos, pk=id)  # _id=ObjectId(id)
     contatoDelete.delete()
     return redirect(CONTATO_LIST)

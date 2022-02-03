@@ -7,7 +7,7 @@ from .forms import UserAutenticationForm, UserCreationForms
 
 # Create your views here.
 @require_http_methods(["GET", "POST"])
-def homeUserLogin(request):
+def home_user_login(request):
     form = UserAutenticationForm(request, data=request.POST)
     if form.is_valid():
         user = form.cleaned_data.get("username")
@@ -20,7 +20,7 @@ def homeUserLogin(request):
 
 
 @require_http_methods(["GET", "POST"])
-def createUser(request):
+def create_user(request):
     form = UserCreationForms(request.POST or None)
     if form.is_valid():
         form.full_clean()
